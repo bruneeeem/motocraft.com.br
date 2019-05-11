@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package motocraft.com.lojademoto;
+package motocraft.com.lojademoto.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/**
+ *
+ * @author Bruno
+ */
 @Controller
-public class ProdutoController {
-    
-    @GetMapping("/produto")
+public class CarrinhoController {
+     
+    /*@GetMapping("/carrinho")
     public String product() {
-        return "product";
-    }
-    
+        return "cart";
+    }*/
 }
