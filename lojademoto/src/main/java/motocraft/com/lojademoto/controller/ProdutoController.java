@@ -19,10 +19,10 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/carrinho")
 public class ProdutoController {
     
-    /*@GetMapping("/produto")
+    @GetMapping("/produto")
     public String product() {
         return "product";
-    }*/
+    }
     
     @Autowired
     private ProdutoRepository produtoRepository;

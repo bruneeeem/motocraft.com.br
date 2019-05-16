@@ -325,7 +325,7 @@
 			<!-- Cart item -->
 			<div class="container-table-cart pos-relative">
 				<div class="wrap-table-shopping-cart bgwhite">
-					<table class="table-shopping-cart">
+                                    <table class="table-shopping-cart" onmouseover="a()">
 						<tr class="table-head">
 							<th class="column-1"></th>
 							<th class="column-2">Produto</th>
@@ -334,28 +334,28 @@
 							<th class="column-5">Total</th>
 						</tr>
 
-						<tr data-th-each="prod, stat: ${produtos}" class="table-row">
+                                            <tr data-th-each="prod, stat: ${produtos}" class="table-row" >
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
 									<img src="/img/item-10.jpg" alt="IMG-PRODUCT">
 								</div>
 							</td>
-							<td data-th-text="${prod.nome}" class="column-2"></td>
-							<td data-th-text="${prod.preco}"class="column-3"></td>
-							<td class="column-4">
+                                                    <td data-th-text="${prod.nome}" class="column-2" ></td>
+                                                    <td data-th-text="${prod.preco}"class="column-3" id="precoProd"></td>
+                                                        <td class="column-4">
 								<div class="flex-w bo5 of-hidden w-size17">
 									<button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2">
 										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 									</button>
 
-									<input class="size8 m-text18 t-center num-product" type="number" name="num-product1" value="1">
+                                                                    <input class="size8 m-text18 t-center num-product" oninput="a()" type="number" id="qntdProd" name="num-product1" value="1" disabled="" >
 
-									<button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2">
+                                                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 " >
 										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
 									</button>
 								</div>
 							</td>
-							<td class="column-5">$36.00</td>
+                                                        <td data-th-text="${prod.preco}" class="column-5" id="total"></td>
 						</tr>
 
 					</table>
@@ -656,6 +656,23 @@
 			dropdownParent: $('#dropDownSelect2')
 		});
 	</script>
+        
+        <script type="text/javascript">
+            
+                           function a() {
+                               
+                                var qntd = document.getElementById('qntdProd').value;
+                                var pegarPreco = document.getElementById('precoProd').innerHTML;
+                                var precoConvertido = parseFloat(pegarPreco);
+                                var calculoPreco = precoConvertido*qntd;
+                                
+                                
+                                document.getElementById('total').innerHTML =calculoPreco.toLocaleString('pt-br',
+                                {minimumFractionDigits: 2});;            
+                            
+                                 }
+                    
+                    	</script>
 <!--===============================================================================================-->
 	<script th:src="@{/js/main.js}"></script>
 
