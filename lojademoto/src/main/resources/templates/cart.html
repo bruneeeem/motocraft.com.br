@@ -152,7 +152,7 @@
 
 								<div class="header-cart-wrapbtn">
 									<!-- Button -->
-									<a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+									<a href="" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
 										Finalizar
 									</a>
 								</div>
@@ -321,6 +321,7 @@
 
 	<!-- Cart -->
 	<section class="cart bgwhite p-t-70 p-b-100">
+            <form th:action="@{/carrinho/finalizar}" method="post" >
 		<div class="container">
 			<!-- Cart item -->
 			<div class="container-table-cart pos-relative">
@@ -444,12 +445,15 @@
 
 				<div class="size15 trans-0-4">
 					<!-- Button -->
-					<button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                                        <button type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
 						Finalizar
 					</button>
+                                        
+                                        
 				</div>
 			</div>
 		</div>
+            </form>>
 	</section>
 
 

@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/carrinho")
 public class ProdutoController {
     
     @GetMapping("/produto")
@@ -24,20 +23,6 @@ public class ProdutoController {
         return "product";
     }
     
-    @Autowired
-    private ProdutoRepository produtoRepository;
-
-
-    @GetMapping
-    public ModelAndView listar(
-            @RequestParam(name = "offset", defaultValue = "0") int offset,
-            @RequestParam(name = "qtd", defaultValue = "100") int qtd){
-            //@RequestParam(name = "idsCat", required = false) List<Integer> idsCat) 
-        List<Produto> produtos;
-
-            produtos = produtoRepository.findAll(offset, qtd);
-            
-        return new ModelAndView("cart").addObject("produtos", produtos);
-    }
+ 
     
 }
