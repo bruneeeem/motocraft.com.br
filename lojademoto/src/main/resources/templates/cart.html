@@ -325,21 +325,23 @@
 			<!-- Cart item -->
 			<div class="container-table-cart pos-relative">
 				<div class="wrap-table-shopping-cart bgwhite">
-                                    <table class="table-shopping-cart" onmouseover="a()">
+                                    <table class="table-shopping-cart"id="tableCar" onclick="a()">
 						<tr class="table-head">
 							<th class="column-1"></th>
+                                                        <th class="column-1">Id</th>
 							<th class="column-2">Produto</th>
 							<th class="column-3">Preço</th>
 							<th class="column-4 p-l-70">Quantidade</th>
 							<th class="column-5">Total</th>
 						</tr>
 
-                                            <tr data-th-each="prod, stat: ${produtos}" class="table-row" >
+                                            <tr  data-th-each="prod, stat: ${produtos}"class="table-row" >
 							<td class="column-1">
 								<div class="cart-img-product b-rad-4 o-f-hidden">
 									<img src="/img/item-10.jpg" alt="IMG-PRODUCT">
 								</div>
 							</td>
+                                                <td data-th-text="${prod.id}" id="idProd" class="column-2" ></td>
                                                     <td data-th-text="${prod.nome}" class="column-2" ></td>
                                                     <td data-th-text="${prod.preco}"class="column-3" id="precoProd"></td>
                                                         <td class="column-4">
@@ -348,9 +350,9 @@
 										<i class="fs-12 fa fa-minus" aria-hidden="true"></i>
 									</button>
 
-                                                                    <input class="size8 m-text18 t-center num-product" oninput="a()" type="number" id="qntdProd" name="num-product1" value="1" disabled="" >
+                                                                    <input class="size8 m-text18 t-center num-product"  value="1" type="number" id="qntdProd" name="num-product1" >
 
-                                                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 " >
+                                                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2"  >
 										<i class="fs-12 fa fa-plus" aria-hidden="true"></i>
 									</button>
 								</div>
@@ -659,19 +661,27 @@
         
         <script type="text/javascript">
             
-                           function a() {
-                               
-                                var qntd = document.getElementById('qntdProd').value;
-                                var pegarPreco = document.getElementById('precoProd').innerHTML;
-                                var precoConvertido = parseFloat(pegarPreco);
-                                var calculoPreco = precoConvertido*qntd;
-                                
-                                
-                                document.getElementById('total').innerHTML =calculoPreco.toLocaleString('pt-br',
-                                {minimumFractionDigits: 2});;            
-                            
-                                 }
                     
+
+function a(){
+      var tabela = document.getElementById('tableCar');
+            for (var i = 1; i < tabela.rows.length; i++) {
+             var tdPrecoProd = tabela.rows[i].childNodes;
+             var nodeList = tdPrecoProd;
+             nodeList = document.querySelectorAll("td#precoProd.column-3");
+                    for (var j = 0; j <nodeList.length; j++) {
+                        var linhaSelecionada = nodeList[j];
+                        
+                           var precoProd = linhaSelecionada.innerHTML;
+                           var qntd = document.getElementById('qntdProd').value;
+                           var precoConvertido = parseFloat(precoProd);
+                           var calculoPreco = precoConvertido*qntd;
+                             alert(calculoPreco);          
+                                
+             }
+                break;
+            }
+        }                                                                     
                     	</script>
 <!--===============================================================================================-->
 	<script th:src="@{/js/main.js}"></script>

@@ -7,13 +7,18 @@ package motocraft.com.lojademoto.entidade;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -39,17 +44,21 @@ public class Produto implements Serializable{
     @Column(length = 20, nullable = false)
     private String preco;
 
+   @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    private Set<ItensPedido> itensPedido;
     
     public Produto() {
         
     }
-    public Produto(Long id, String nome, String descricao, String preco) {
+
+    public Produto(Long id, String nome, String descricao, String preco, Set<ItensPedido> itensPedido) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
         this.preco = preco;
+        this.itensPedido = itensPedido;
     }
-
+ 
 
     public Long getId() {
         return id;
@@ -81,7 +90,6 @@ public class Produto implements Serializable{
 
     public void setPreco(String preco) {
         this.preco = preco;
-    }
-    
+    }    
     
 }
