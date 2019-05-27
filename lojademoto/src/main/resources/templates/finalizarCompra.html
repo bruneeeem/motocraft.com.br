@@ -13,16 +13,19 @@ and open the template in the editor.
     <body>
         <table class="table-shopping-cart">
             <tr class="table-head">
-                <th class="column-1">Id</th>
-                <th class="column-2">Data venda</th>
+                <th class="column-1">Número do Pedido: Acompanhamento</th>
+                <!--<th class="column-2">Data venda</th> -->
 
             </tr>
-            <h2>Compra Realizada com sucesso!</h2>
-            <tr data-th-each="v, stat: ${venda}" class="table-row">
-                <td data-th-text="${v.id}" class="column-2" ></td>
-                <td data-th-text="${v.dataVenda}"class="column-2" ></td>
+            <h2>Compra Realizada com sucesso! Volte Sempre : Xpto Tsuda </h2>
+            <tr data-th-each="p, stat: ${pedido}" class="table-row">
+             <td data-th-text="${p.id}" class="column-2" ></td>
+              <!--  <td data-th-text="${p.dataPedido}"class="column-2" ></td> -->
             </tr>
-
+              
         </table>
+        <center>
+              <a th:href="@{/carrinho}">Novo Pedido</a>
+        </center>      
     </body>
 </html>

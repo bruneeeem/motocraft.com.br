@@ -5,8 +5,10 @@
  */
 package motocraft.com.lojademoto.controller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import motocraft.com.lojademoto.entidade.ItensPedido;
+import motocraft.com.lojademoto.entidade.Pedido;
 import motocraft.com.lojademoto.entidade.Produto;
 import motocraft.com.lojademoto.repository.ClienteRepository;
 import motocraft.com.lojademoto.repository.ItensPedidoRepository;
@@ -35,6 +37,7 @@ public class CarrinhoController {
     
     private ClienteRepository clienteRepository;
     
+    @Autowired
     private PedidoRepository pedidoRepository;
     
     private ItensPedidoRepository ipRepository;
@@ -48,13 +51,16 @@ public class CarrinhoController {
 
             produtos = produtoRepository.findAll(offset, qtd);
             
-        return new ModelAndView("cart").addObject("produtos", produtos);
+        return new ModelAndView("cart")
+                .addObject("produtos", produtos)
+                .addObject("pedido",new Pedido());
     }
     
     @PostMapping("/finalizar")
-    public ModelAndView salvar() {
-        return new ModelAndView("finalizar");
-       
-    }
+        public ModelAndView salvar(@ModelAttribute("pedido")Pedido p) {
+        p.setDataPedido(LocalDateTime.now());
+        pedidoRepository.save(p);
+        return new ModelAndView("finalizarCompra");
     
+        }
 }

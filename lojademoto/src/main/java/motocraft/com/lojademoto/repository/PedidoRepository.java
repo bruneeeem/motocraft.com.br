@@ -14,8 +14,6 @@ import motocraft.com.lojademoto.entidade.Pedido;
 import motocraft.com.lojademoto.entidade.Venda;
 import org.springframework.stereotype.Repository;
 
-
-
 @Repository
 public class PedidoRepository {
     @PersistenceContext

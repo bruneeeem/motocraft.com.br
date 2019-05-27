@@ -31,17 +31,16 @@ public class Pedido implements Serializable{
         
     private LocalDateTime dataPedido;
     
-    private int qtdTotal;
     
     public Pedido(){
         
         
     }
     
-     public Pedido(Long id, LocalDateTime dataPedido, int qtdTotal, Cliente cliente, List<ItensPedido> itensPedido) {
+     public Pedido(Long id, LocalDateTime dataPedido, Cliente cliente, List<ItensPedido> itensPedido) {
         this.id = id;
         this.dataPedido = dataPedido;
-        this.qtdTotal = qtdTotal;
+       
         this.cliente = cliente;
         this.itensPedido = itensPedido;
     }
@@ -69,13 +68,6 @@ public class Pedido implements Serializable{
         this.dataPedido = dataPedido;
     }
 
-    public int getQtdTotal() {
-        return qtdTotal;
-    }
-
-    public void setQtdTotal(int qtdTotal) {
-        this.qtdTotal = qtdTotal;
-    }
 
     public Cliente getCliente() {
         return cliente;
