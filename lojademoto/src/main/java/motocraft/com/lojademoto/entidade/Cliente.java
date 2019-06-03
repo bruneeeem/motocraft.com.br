@@ -21,139 +21,197 @@ import javax.persistence.OneToMany;
  * @author bruno.malmeida3
  */
 @Entity
-public class Cliente implements Serializable{
-    
+public class Cliente implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     @Column(length = 100, nullable = false)
     private String nome;
-    
-    private String endereco;
-    
-    private String bairro;
-    
-    private String cidade;
-    
-    private String estado;
-    
-    private String cep;
+
+    private String sobrenome;
+
+    private String email;
     
     private String sexo;
     
-    private String telefone;
+    private String dtNascimento;
     
+    
+    private String cpf;
+
+    private String cep;
+
+    private String enderecoLogradouro;
+
+    
+    private String enderecoNumero;
+    
+    private String enderecoComplemento;
+    
+    private String bairro;
+
+    private String cidade;
+
+    private String estado;
+
+    private String telefoneContato;
+
     private String celular;
 
-     public Cliente() {
-    
-     }
-     
-    public Cliente(Long id, String nome, String endereco, String bairro, String cidade, String estado, String cep, String sexo, String telefone, String celular, Set<Pedido> pedidos) {
+    public Cliente() {
+
+    }
+        public Cliente(Long id, String nome, String sobrenome, String email, String sexo, String dtNascimento, String cpf, String cep, String enderecoLogradouro, String enderecoNumero, String enderecoComplemento, String bairro, String cidade, String estado, String telefoneContato, String celular) {
         this.id = id;
         this.nome = nome;
-        this.endereco = endereco;
+        this.sobrenome = sobrenome;
+        this.email = email;
+        this.sexo = sexo;
+        this.dtNascimento = dtNascimento;
+        this.cpf = cpf;
+        this.cep = cep;
+        this.enderecoLogradouro = enderecoLogradouro;
+        this.enderecoNumero = enderecoNumero;
+        this.enderecoComplemento = enderecoComplemento;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
-        this.cep = cep;
-        this.sexo = sexo;
-        this.telefone = telefone;
+        this.telefoneContato = telefoneContato;
         this.celular = celular;
-        this.pedidos = pedidos;
-    }
-    
-    
-   
-    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY)
-    private Set<Pedido> pedidos;
-        
-
-    public Set<Pedido> getPedidos() {
-        return pedidos;
     }
 
-    public void setPedidos(Set<Pedido> pedidos) {
-        this.pedidos = pedidos;
+    public Long getId() {
+        return id;
     }
-    
-    public Long getId(){return id;}
-    
-    public void setId(Long id){
-        
+
+    public void setId(Long id) {
         this.id = id;
     }
-    
-    public String getNome(){return nome;}
-    
-    public void setNome(String nome){
-        
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
-        
     }
-    
-    public String getEndereco(){return endereco;}
-    
-    public void setEndereco(String endereco){
-        
-        this.endereco = endereco;
-        
+
+    public String getSobrenome() {
+        return sobrenome;
     }
-    
-    public String getBairro(){return bairro;}
-    
-    public void setBairro(String bairro){
-        
-        this.bairro = bairro;
-        
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
-    
-    public String getCidade(){return cidade;}
-    
-    public void setCidade(String cidade){
-        
-    this.cidade = cidade;
-    
-    }    
-    
-    public String getEstado(){return estado;}
-    
-    public void setEstado(String estado){
-        
-        this.estado = estado;
-        
+
+    public String getEmail() {
+        return email;
     }
-    
-    public String getCep(){return cep;}
-    
-    public void setCep(String cep){
-        
-        this.cep = cep;
-        
+
+    public void setEmail(String email) {
+        this.email = email;
     }
-    
-    public String getSexo(){return sexo;}
-    
-    public void setSexo(String sexo){
-    
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
         this.sexo = sexo;
-        
     }
-   
-    public String getTelefone(){return telefone;}
-    
-    public void setTelefone(String telefone){
-        
-        this.telefone = telefone;
-        
+
+    public String getDtNascimento() {
+        return dtNascimento;
     }
-    
-    public String getCelular(){return celular;}
-    
-    public void setCelular(String celular){
-    
+
+    public void setDtNascimento(String dtNascimento) {
+        this.dtNascimento = dtNascimento;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getEnderecoLogradouro() {
+        return enderecoLogradouro;
+    }
+
+    public void setEnderecoLogradouro(String enderecoLogradouro) {
+        this.enderecoLogradouro = enderecoLogradouro;
+    }
+
+    public String getEnderecoNumero() {
+        return enderecoNumero;
+    }
+
+    public void setEnderecoNumero(String enderecoNumero) {
+        this.enderecoNumero = enderecoNumero;
+    }
+
+    public String getEnderecoComplemento() {
+        return enderecoComplemento;
+    }
+
+    public void setEnderecoComplemento(String enderecoComplemento) {
+        this.enderecoComplemento = enderecoComplemento;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getTelefoneContato() {
+        return telefoneContato;
+    }
+
+    public void setTelefoneContato(String telefoneContato) {
+        this.telefoneContato = telefoneContato;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
         this.celular = celular;
-    
     }
+
+
+
+
+    
 }

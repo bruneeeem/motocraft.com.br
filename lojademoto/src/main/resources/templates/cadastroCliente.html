@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>DADOS CLIENTE</title>
+        <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                <!--------  BOOTSTRAP MENU ------------>
+                <link rel="icon" type="image/png" th:href="@{/img/favicon.png}"/>
+                <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+                    <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+                        <link rel="stylesheet" type="text/css" th:ref="@{/css/themify-icons.css}">        
+                            <link rel="stylesheet" type="text/css" th:href="@{/css/icon-font.min.css}">
+                                <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+                                    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.css}">
+                                        <link rel="stylesheet" type="text/css" th:href="@{/css/hamburgers.min.css}">
+                                            <link rel="stylesheet" type="text/css" th:href="@{/css/animsition.min.css}">
+                                                <link rel="stylesheet" type="text/css" th:href="@{/css/select2.min.css}">
+                                                    <link rel="stylesheet" type="text/css" th:href="@{/css/daterangepicker.css}">
+                                                        <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}">
+                                                            <link rel="stylesheet" type="text/css" th:href="@{/css/lightbox.min.css}">
+                                                                <link rel="stylesheet" type="text/css" th:href="@{/css/util.css}">        
+                                                                    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">        
+                                                                        <link rel="stylesheet" type="text/css" th:href="@{/css/nouislider.min.css}">
+
+                                                                            <!--------  BOOTSTRAP MENU ------------>
+
+
+                                                                            <!-------- BOOTSTRAP DO FORMULÁRIO DE CLIENTE (INPUT) ------->
+                                                                            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+                                                                            <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+                                                                            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                                                                            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                                                                            <!-------- BOOTSTRAP DO FORMULÁRIO DE CLIENTE(INPUT)------->
+                                                                            </head>
+                                                                            <body class="animsition">
+
+                                                                                <!-- Header -->
+                                                                                <header class="header1">
+                                                                                    <!-- Header desktop -->
+                                                                                    <div class="container-menu-header">
+                                                                                        <div class="topbar">
+
+
+                                                                                            <!--
+                                                                                                <div class="topbar-social">
+                                                                                                        <a href="#" class="topbar-social-item fa fa-facebook"></a>
+                                                                                                        <a href="#" class="topbar-social-item fa fa-instagram"></a>
+                                                                                                        <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+                                                                                                        <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+                                                                                                        <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                                                                                                </div>
+                                                                                            -->
+                                                                                            <span class="topbar-child1">
+                                                                                                Whatsapp:(+55)97070-7070 para dúvidas
+                                                                                            </span>
+
+                                                                                            <div class="topbar-child2">
+                                                                                                <span class="topbar-email">
+                                                                                                    motocraft@motocraft.com.br
+                                                                                                </span>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                        <div class="wrap_header">
+                                                                                            <!-- Logo -->
+                                                                                            <a th:href="@{/index}" class="logo">
+                                                                                                <img src="/img/MotoCraft.png" alt="IMG-LOGO">
+                                                                                            </a>
+
+                                                                                            <!-- Menu -->
+                                                                                            <div class="wrap_menu">
+                                                                                                <nav class="menu">
+                                                                                                    <ul class="main_menu">
+                                                                                                        <li>
+                                                                                                            <a th:href="@{/index}">Home</a> 
+                                                                                                    </ul>
+                                                                                                </nav>
+
+                                                                                                <br>
+                                                                                                    <br>  
+
+                                                                                                        <!--- FORMLÁRIO DE CLIENTE(ÍNICIO) --->
+
+
+
+
+
+                                                                                                        </div>
+                                                                                                        <!--- FORMLÁRIO DE CLIENTE(TÉRMINO) --->
+
+
+
+                                                                                                        <!-- Header Mobile -->
+                                                                                                        <div class="wrap_header_mobile">
+                                                                                                            <!-- Logo moblie -->
+                                                                                                            <a th:href="@{/index}" class="logo-mobile">
+                                                                                                                <img src="/img/MotoCraft.png" alt="IMG-LOGO">
+                                                                                                            </a>
+
+                                                                                                            <!-- Button show menu -->
+                                                                                                            <div class="btn-show-menu">
+                                                                                                                <!-- Header Icon mobile -->
+                                                                                                                <div class="header-icons-mobile">
+                                                                                                                    <a href="#" class="header-wrapicon1 dis-block">
+                                                                                                                        <img src="/img/icon-header-01.png" class="header-icon1" alt="ICON">
+                                                                                                                    </a>
+
+                                                                                                                    <span class="linedivide2"></span>
+
+                                                                                                                    <div class="header-wrapicon2">
+                                                                                                                        <img src="/img/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                                                                                                                            <span class="header-icons-noti">0</span>
+
+                                                                                                                            <!-- Header cart noti -->
+                                                                                                                            <div class="header-cart header-dropdown">
+
+                                                                                                                                <ul class="header-cart-wrapitem">
+                                                                                                                                    <!--
+                                                                                                                                      <li class="header-cart-item">
+                                                                                                                                              <div class="header-cart-item-img">
+                                                                                                                                                      <img src="img/item-cart-01.jpg" alt="IMG">
+                                                                                                                                              </div>
+                                                                      
+                                                                                                                                              <div class="header-cart-item-txt">
+                                                                                                                                                      <a href="#" class="header-cart-item-name">
+                                                                                                                                                              Produto 01
+                                                                                                                                                      </a>
+                                                                      
+                                                                                                                                                      <span class="header-cart-item-info">
+                                                                                                                                                              1 x $19.00
+                                                                                                                                                      </span>
+                                                                                                                                              </div>
+                                                                                                                                      </li>
+                                                                      
+                                                                                                                                      <li class="header-cart-item">
+                                                                                                                                              <div class="header-cart-item-img">
+                                                                                                                                                      <img src="images/item-cart-02.jpg" alt="IMG">
+                                                                                                                                              </div>
+                                                                      
+                                                                                                                                              <div class="header-cart-item-txt">
+                                                                                                                                                      <a href="#" class="header-cart-item-name">
+                                                                                                                                                              Produto 02
+                                                                                                                                                      </a>
+                                                                      
+                                                                                                                                                      <span class="header-cart-item-info">
+                                                                                                                                                              1 x $39.00
+                                                                                                                                                      </span>
+                                                                                                                                              </div>
+                                                                                                                                      </li>
+                                                                      
+                                                                                                                                      <li class="header-cart-item">
+                                                                                                                                              <div class="header-cart-item-img">
+                                                                                                                                                      <img src="images/item-cart-03.jpg" alt="IMG">
+                                                                                                                                              </div>
+                                                                      
+                                                                                                                                              <div class="header-cart-item-txt">
+                                                                                                                                                      <a href="#" class="header-cart-item-name">
+                                                                                                                                                              Produto 03
+                                                                                                                                                      </a>
+                                                                      
+                                                                                                                                                      <span class="header-cart-item-info">
+                                                                                                                                                              1 x $17.00
+                                                                                                                                                      </span>
+                                                                                                                                              </div>
+                                                                                                                                      </li>
+                                                                                                                                    -->
+                                                                                                                                </ul>
+
+                                                                                                                                <div class="header-cart-total">
+                                                                                                                                    Total: 
+                                                                                                                                </div>
+
+                                                                                                                                <div class="header-cart-buttons">
+                                                                                                                                    <div class="header-cart-wrapbtn">
+                                                                                                                                        <!-- Button -->
+                                                                                                                                        <a th:href="@{/carrinho}" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                                                                                                            Carrinho
+                                                                                                                                        </a>
+                                                                                                                                    </div>
+
+                                                                                                                                    <div class="header-cart-wrapbtn">
+                                                                                                                                        <!-- Button -->
+                                                                                                                                        <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                                                                                                            Finalizar
+                                                                                                                                        </a>
+                                                                                                                                    </div>
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+
+                                                                                                                <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+                                                                                                                    <span class="hamburger-box">
+                                                                                                                        <span class="hamburger-inner"></span>
+                                                                                                                    </span>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                        <!-- Menu Mobile -->
+                                                                                                        <div class="wrap-side-menu" >
+                                                                                                            <nav class="side-menu">
+                                                                                                                <ul class="main-menu">
+                                                                                                                    <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                                                                                                                        <span class="topbar-child1">
+                                                                                                                            Whatsapp:(xx)9-xxxx xxxx para dúvidas
+                                                                                                                        </span>
+                                                                                                                    </li>
+
+                                                                                                                    <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                                                                                                                        <div class="topbar-child2-mobile">
+                                                                                                                            <span class="topbar-email">
+                                                                                                                                motocraft@motocraft.com.br
+                                                                                                                            </span>
+                                                                                                                        </div>
+                                                                                                                    </li>
+
+                                                                                                                    <li class="item-topbar-mobile p-l-10">
+                                                                                                                        <!--
+                                                                                                                            <div class="topbar-social-mobile">
+                                                                                                                                    <a href="#" class="topbar-social-item fa fa-facebook"></a>
+                                                                                                                                    <a href="#" class="topbar-social-item fa fa-instagram"></a>
+                                                                                                                                    <a href="#" class="topbar-social-item fa fa-pinterest-p"></a>
+                                                                                                                                    <a href="#" class="topbar-social-item fa fa-snapchat-ghost"></a>
+                                                                                                                                    <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+                                                                                                                            </div>
+                                                                                                                        -->
+                                                                                                                    </li>
+
+                                                                                                                    <li class="item-menu-mobile">
+                                                                                                                        <a th:href="@{/index}">Home</a>
+                                                                                                                    </li>
+
+                                                                                                                    <li class="item-menu-mobile">
+                                                                                                                        <a th:href="@{/produto}">Produtos</a>
+                                                                                                                    </li>
+                                                                                                                </ul>
+                                                                                                            </nav>
+                                                                                                        </div>
+                                                                                                        </header>
+                                                                                                        <br>
+                                                                                                            <form th:action="@{/formularioCadastro/salvar}" method="post" th:object="${cliente}">
+                                                                                                                <div>
+                                                                                                                    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DADOS PESSOAIS </p>   
+
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtNome" class="col-sm-2 col-form-label">Nome:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="nome" size="50" class="form-control"  id="txtNome" placeholder="Digte um nome" th:field="*{nome}" required>
+
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite um nome!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtSobrenome" class="col-sm-2 col-form-label">Sobrenome:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="sobrenome" size="50" class="form-control"  id="txtSobrenome" placeholder="Digte um sobrenome"th:field="*{sobrenome}" required>
+
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite um sobrenome!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtEmail" class="col-sm-2 col-form-label">Email:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="email" name="email" size="50" class="form-control"  id="txtEmail" placeholder="email@email.com" th:field="*{email}" required>
+
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite um email!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtSexo" class="col-sm-2 col-form-label">Gênero:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="sexo" size="50" class="form-control"  id="txtSexo" placeholder=" Informe seu gênero " th:field="*{sexo}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite um gênero!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtDtNascimento" class="col-sm-2 col-form-label">Data de Nascimento:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="Date" name="dtNascimento" size="50" class="form-control"  id="txtDtNascimento" th:field="*{dtNascimento}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite sua data de nascimento!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                              
+                                                                                                                        &nbsp;&nbsp;<label for="txtCpf" class="col-sm-2 col-form-label">CPF:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="number" name="cpf" size="50" class="form-control"  id="txtCpf" placeholder=" 000.000.000-00 "th:field="*{cpf}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite seu CPF!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                
+                                                                                                                <div>               
+                                                                                                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENDEREÇO </p>  
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtCep" class="col-sm-2 col-form-label">CEP:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="cep" name="cep" size="50" class="form-control"  id="txtCep" placeholder=" Informe seu CEP" th:field="*{cep}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite seu CEP!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtLogradouro" class="col-sm-2 col-form-label">Logradouro:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="logradouro" size="50" class="form-control"  id="txtLogradouro" placeholder=" Informe seu Logradouro "th:field="*{enderecoLogradouro}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite seu Logradouro!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtNumeroRua" class="col-sm-2 col-form-label">Número:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="number" name="numeroRua" size="50" class="form-control"  id="txtNumeroRua" placeholder="000" th:field="*{enderecoNumero}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Digite o número!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtComplemento" class="col-sm-2 col-form-label">Complemento:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="complemento" size="50" class="form-control"  id="txtComplmento" placeholder=" Informe o complemento do endereco " th:field="*{enderecoComplemento}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Informe o complemento!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtBairro" class="col-sm-2 col-form-label">Bairro:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="bairro" size="50" class="form-control"  id="txtBairro" placeholder=" Informe o bairro" th:field="*{bairro}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Informe o bairro!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtCidade" class="col-sm-2 col-form-label">Cidade:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="cidade" size="50" class="form-control"  id="txtCidade" placeholder=" Informe a cidade " th:field="*{cidade}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Informe a cidade!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        
+                                                                                                                        &nbsp;&nbsp;<label for="txtEstado" class="col-sm-2 col-form-label">Estado:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="estado" size="50" class="form-control"  id="txtEstado" placeholder=" Informe o Estado " th:field="*{estado}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Informe o Estado!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                </div>
+                                                                                                                
+                                                                                                                <div>               
+                                                                                                                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CONTATO </p>  
+                                                                                                                    <div class="form-group row">
+                                                                                                                        &nbsp;&nbsp;<label for="txtResidencial" class="col-sm-2 col-form-label">Telefone Residencial:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="residencial" size="50" class="form-control"  id="txtResidencial" placeholder=" (DD) XXXX - XXXXX " th:field="*{telefoneContato}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Informe o telefone residencial!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                        
+                                                                                                                    </div>
+                                                                                                                    
+                                                                                                                    <div class="form-group row">
+                                                                                                                        &nbsp;&nbsp;<label for="txtCelular" class="col-sm-2 col-form-label">Celular:</label>
+                                                                                                                        <div>
+                                                                                                                            <input type="text" name="celular" size="50" class="form-control"  id="txtCelular" placeholder=" (DD) 9XXXX-XXXX " th:field="*{celular}" required>
+                                                                                                                                <div class="invalid-feedback">
+                                                                                                                                    Informe o telefone celular!
+                                                                                                                                </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <br>
+                                                                                                                    <center>
+                                                                                                                <div class="col-md-3">
+                                                                                                                    <button type="submit" class="btn btn-block btn-success">Enviar</button>
+                                                                                                                </div>
+                                                                                                                    </center>
+                                                                                                            </form>
+                                                                                                            <div class="btn-back-to-top bg0-hov" id="myBtn">
+                                                                                                                <span class="symbol-btn-back-to-top">
+                                                                                                                    <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+                                                                                                                </span>
+
+                                                                                                            </div>
+
+                                                                                                            <!-- Container Selection -->
+                                                                                                            <div id="dropDownSelect1"></div>
+                                                                                                            <div id="dropDownSelect2"></div>
+
+
+
+                                                                                                            <script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+
+                                                                                                            <script type="text/javascript" th:src="@{/js/animsition.min.js}"></script>
+
+                                                                                                            <script type="text/javascript" th:src="@{/js/popper.js}"></script>
+                                                                                                            <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+                                                                                                            <script type="text/javascript" th:src="@{/js/select2.min.js}"></script>
+
+                                                                                                            <script type="text/javascript">
+                                                                                                                $(".selection-1").select2({
+                                                                                                                    minimumResultsForSearch: 20,
+                                                                                                                    dropdownParent: $('#dropDownSelect1')
+                                                                                                                });
+
+                                                                                                                $(".selection-2").select2({
+                                                                                                                    minimumResultsForSearch: 20,
+                                                                                                                    dropdownParent: $('#dropDownSelect2')
+                                                                                                                });
+                                                                                                            </script>
+
+                                                                                                            <!--===============================================================================================-->
+                                                                                                            <script th:src="@{/js/main.js}"></script>
+
+                                                                                                            </body>
+                                                                                                            </html>
+

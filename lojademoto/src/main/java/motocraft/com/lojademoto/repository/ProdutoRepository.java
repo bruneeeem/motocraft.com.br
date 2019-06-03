@@ -10,8 +10,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
+import motocraft.com.lojademoto.entidade.Cliente;
 import motocraft.com.lojademoto.entidade.Produto;
-import motocraft.com.lojademoto.entidade.Venda;
+
 import org.springframework.stereotype.Repository;
 
 /**
@@ -31,13 +32,30 @@ public class ProdutoRepository {
                         .setMaxResults(quantidade);
         return jpqlQuery.getResultList();
     }
-    
+
+    public Produto findById(Long id) {
+        Query jpqlQuery
+                = entityManager.createNamedQuery("Produto.findById")
+                        .setParameter("idProd", id);
+        Produto p = (Produto) jpqlQuery.getSingleResult();
+        return p;
+    }
+
     @Transactional
-    public void save(Venda v) {
-            // Salva um novo produto
-            entityManager.persist(v);
+    public void save(Produto p) {
+        if (p.getId() == null) {
+            entityManager.persist(p);
+        } else {
+            entityManager.merge(p);
         }
-    
+
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        
+        Produto p = entityManager.find(Produto.class, id);
+        entityManager.remove(p);
+    }
 
 }
-

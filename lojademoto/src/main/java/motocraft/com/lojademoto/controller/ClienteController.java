@@ -5,20 +5,14 @@
  */
 package motocraft.com.lojademoto.controller;
 
-import java.time.LocalDateTime;
-import java.util.List;
-
-import motocraft.com.lojademoto.entidade.Produto;
+import java.io.Serializable;
+import motocraft.com.lojademoto.entidade.Cliente;
 import motocraft.com.lojademoto.repository.ClienteRepository;
-
-import motocraft.com.lojademoto.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -27,11 +21,23 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @author Bruno
  */
 @Controller
-@RequestMapping("/carrinho")
-public class CarrinhoController {
+@RequestMapping("/formularioCadastro")
+public class ClienteController implements Serializable {
 
+    
+    @Autowired
+    private ClienteRepository clienterepository;
+    
     @GetMapping
-    public String product() {
-        return "cart";
+    public ModelAndView formCliente() {
+        return new ModelAndView("cadastroCliente").addObject("cliente",new Cliente());
+    }
+     @PostMapping("/salvar")
+    public ModelAndView salvarCliente( Cliente c, RedirectAttributes redirectAttributes) {
+        clienterepository.save(c);
+        redirectAttributes.addFlashAttribute("mensagemSucesso", " Cliente " + c.getNome() + " salvo com sucesso");
+        return new ModelAndView("redirect:/index");
+
+        
     }
 }
