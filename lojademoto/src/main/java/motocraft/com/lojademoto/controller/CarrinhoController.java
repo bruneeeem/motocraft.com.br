@@ -7,8 +7,11 @@ package motocraft.com.lojademoto.controller;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import motocraft.com.lojademoto.entidade.Carrinho;
 
 import motocraft.com.lojademoto.entidade.Produto;
+
+import motocraft.com.lojademoto.repository.CategoriaRepository;
 import motocraft.com.lojademoto.repository.ClienteRepository;
 
 import motocraft.com.lojademoto.repository.ProdutoRepository;
@@ -29,9 +32,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping("/carrinho")
 public class CarrinhoController {
-
+    
+    
     @GetMapping
     public String product() {
         return "cart";
     }
+    
 }

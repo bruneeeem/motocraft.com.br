@@ -27,17 +27,17 @@ public class Categoria implements Serializable {
 
     private String nomeCategoria;
 
+    @OneToMany(mappedBy = "categoriaProduto", fetch = FetchType.LAZY)
+    private List<Produto> produto;
+
+    public Categoria() {
+    }
+
     public Categoria(Long id, String nomeCategoria, List<Produto> produto) {
         this.id = id;
         this.nomeCategoria = nomeCategoria;
         this.produto = produto;
     }
-
-    public Categoria() {
-    }
-
-    @OneToMany(mappedBy = "categoria", fetch = FetchType.LAZY)
-    private List<Produto> produto;
 
     public Long getId() {
         return id;

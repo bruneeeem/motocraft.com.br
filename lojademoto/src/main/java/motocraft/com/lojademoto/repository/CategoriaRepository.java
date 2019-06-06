@@ -25,7 +25,7 @@ public class CategoriaRepository {
                 = entityManager.createQuery("SELECT c FROM Categoria c ");
         return jpqlQuery.getResultList();
     }
-
+  
     public Categoria findById(int id) {
         Query jpqlQuery
                 = entityManager.createQuery(

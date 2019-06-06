@@ -400,11 +400,8 @@
 
 						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
 							<select class="selection-2" name="size">
-								<option>Selecione</option>
-								<option>P</option>
-								<option>M</option>
-								<option>G</option>
-								<option>GG</option>
+								<option th:value="${produto.id}" th:text="${produto.tamanho}"></option>
+								
 							</select>
 						</div>
 					</div>
@@ -416,11 +413,8 @@
 
 						<div class="rs2-select2 rs3-select2 bo4 of-hidden w-size16">
 							<select class="selection-2" name="color">
-								<option>Selecione</option>
-								<option>Cinza</option>
-								<option>Vermelho</option>
-								<option>Preto</option>
-								<option>Azul</option>
+								<option th:value="${produto.id}" th:text="${produto.cor}"></option>
+								
 							</select>
 						</div>
 					</div>

@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Set;
 import motocraft.com.lojademoto.entidade.Categoria;
 import motocraft.com.lojademoto.entidade.Produto;
+
 import motocraft.com.lojademoto.repository.CategoriaRepository;
 import motocraft.com.lojademoto.repository.ClienteRepository;
 import motocraft.com.lojademoto.repository.ProdutoRepository;
@@ -30,11 +31,13 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/produto")
 public class ProdutoController {
 
-    @Autowired
-    private CategoriaRepository cat;
-
+   
     @Autowired
     private ProdutoRepository prod;
+    
+    
+    @Autowired
+    private CategoriaRepository cat;
     
     @GetMapping
     public ModelAndView detalheProduto() {
@@ -44,14 +47,20 @@ public class ProdutoController {
 
     @GetMapping("/novo")
     public ModelAndView novoProduto() {
-        return new ModelAndView("produto/novo").addObject("produto", new Produto());
+        List<Categoria> c = cat.findAll();
+        return new ModelAndView("produto/novo").addObject("produto", new Produto()).addObject("categorias",c);
 
     }
 
     @PostMapping("/salvar")
-    public ModelAndView salvar(@ModelAttribute("produto") Produto produto,
+    public ModelAndView salvar(@ModelAttribute("produto") Produto produto, @RequestParam(value = "idCat") Long cat,
             RedirectAttributes redirectAttributes) {
 
+        Categoria categoria = new Categoria();
+        categoria.setId(cat);
+        
+        produto.setCategoriaProduto(categoria);
+        
         prod.save(produto);
         redirectAttributes.addFlashAttribute("mensagemSucesso",
                 "Produto " + produto.getNome() + " salvo com sucesso");
@@ -63,7 +72,7 @@ public class ProdutoController {
     */
     @GetMapping("/listar")
     public ModelAndView listar(
-            @RequestParam(name = "offset", defaultValue = "2") int offset,
+            @RequestParam(name = "offset", defaultValue = "0") int offset,
             @RequestParam(name = "qtd", defaultValue = "100") int qtd) {
 
         List<Produto> produtos;
@@ -89,8 +98,5 @@ public class ProdutoController {
         return new ModelAndView("redirect:/produto/listar");
     }
 
-    @ModelAttribute("categorias")
-    public List<Categoria> getCategoria() {
-        return cat.findAll();
-    }
+   
 }
