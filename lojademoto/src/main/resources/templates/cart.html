@@ -336,15 +336,15 @@
                                                                                                         <th class="column-5">Total</th>
                                                                                                     </tr>
 
-                                                                                                    <tr  data-th-each="prod, stat: ${produtos}"class="table-row" >
+                                                                                                    <tr data-th-if="${carrinho != null}"  data-th-each="car, stat: ${carrinho}"class="table-row" >
                                                                                                         <td class="column-1">
                                                                                                             <div class="cart-img-product b-rad-4 o-f-hidden">
                                                                                                                 <img src="/img/capa.jpg" alt="IMG-PRODUCT">
                                                                                                             </div>
                                                                                                         </td>
 
-                                                                                                        <td data-th-text="${prod.nome}" class="column-2" ></td>
-                                                                                                        <td data-th-text="${prod.preco}"class="column-3" id="precoProd"></td>
+                                                                                                        <td data-th-text="${car.nomeProduto}" class="column-2" ></td>
+                                                                                                        <td data-th-text="${car.precoVendaCar}"class="column-3" id="precoProd"></td> 
                                                                                                         <td class="column-4" onclick="a()">
                                                                                                             <div class="flex-w bo5 of-hidden w-size17">
                                                                                                                 <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2" >
@@ -358,7 +358,7 @@
                                                                                                                     </button>
                                                                                                             </div>
                                                                                                         </td>
-                                                                                                        <td data-th-text="${prod.preco}" class="column-5" id="total"></td>
+                                                                                                        <td data-th-text="${car.precoVendaCar}" class="column-5" id="total"></td> 
                                                                                                     </tr>
 
                                                                                                 </table>

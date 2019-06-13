@@ -10,6 +10,7 @@ import java.util.List;
 import motocraft.com.lojademoto.entidade.Carrinho;
 
 import motocraft.com.lojademoto.entidade.Produto;
+import motocraft.com.lojademoto.repository.CarrinhoRepository;
 
 import motocraft.com.lojademoto.repository.CategoriaRepository;
 import motocraft.com.lojademoto.repository.ClienteRepository;
@@ -32,11 +33,29 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping("/carrinho")
 public class CarrinhoController {
-    
-    
+
+    @Autowired
+    private CarrinhoRepository car;
+
     @GetMapping
-    public String product() {
-        return "cart";
+    public ModelAndView product(
+            @RequestParam(name = "offset", defaultValue = "0") int offset,
+            @RequestParam(name = "qtd", defaultValue = "100") int qtd) {
+
+        List<Carrinho> carrinho;
+
+        // Busca normal
+        carrinho = car.findAll(offset, qtd);
+
+        return new ModelAndView("cart").addObject("carrinho", carrinho);
+
     }
-    
+
+    @PostMapping("/salvar")
+    public ModelAndView salvar(@ModelAttribute("carrinho") Carrinho carrinho,
+            RedirectAttributes redirectAttributes) {
+
+        car.save(carrinho);
+        return new ModelAndView("redirect:/cart");
+    }
 }

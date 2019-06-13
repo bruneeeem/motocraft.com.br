@@ -5,7 +5,11 @@
  */
 package motocraft.com.lojademoto.controller;
 
+import java.math.BigDecimal;
+import java.util.List;
+import motocraft.com.lojademoto.entidade.Carrinho;
 import motocraft.com.lojademoto.entidade.Produto;
+import motocraft.com.lojademoto.repository.CarrinhoRepository;
 import motocraft.com.lojademoto.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,16 +24,36 @@ import org.springframework.web.servlet.ModelAndView;
  * @author Daniel
  */
 @Controller
-@RequestMapping("/addcart")
-public class AddCartController {      
+@RequestMapping("/carrinho")
+public class AddCartController {
+
     @Autowired
     private ProdutoRepository prod;
-       
-    @PostMapping("/addCarrinho")
-    public ModelAndView addCart(@RequestParam(name = "id") Long id)
-    {
-        Produto p = prod.findById(id); 
-        return new ModelAndView("/carrinho").addObject("produto",p);
+
+    @Autowired
+    private CarrinhoRepository carrinho;
+
+    @PostMapping("/adicionar")
+    public ModelAndView addCart(
+            @RequestParam(name = "id") Long id,
+            @RequestParam(name = "nome") String nome,
+            @RequestParam(name = "precoVenda") BigDecimal venda,
+            @RequestParam(name = "offset", defaultValue = "0") int offset,
+            @RequestParam(name = "qtd", defaultValue = "100") int qtd) {
+
+        Produto p = prod.findById(id);
+        
+        Carrinho car = new Carrinho();
+        car.setNomeProduto(nome);
+        car.setPrecoVendaCar(venda);
+        car.setProduto(p);
+
+        List<Produto> produto;
+        // Busca normal
+        produto = prod.findAll(offset, qtd);
+
+        carrinho.save(car);
+        return new ModelAndView("product").addObject("produtos", produto);
     }
-    
+
 }

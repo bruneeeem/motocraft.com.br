@@ -58,6 +58,7 @@ public class Produto implements Serializable {
 
     private String tamanho;
 
+    
 
     @OneToOne(fetch = FetchType.LAZY)// REMOVER O @Transient e USAR A ANOTAÇÃO DE ASSOCIAÇÃO COM A CLASSE Pessoa
     @JoinColumn(name = "id_categoria")

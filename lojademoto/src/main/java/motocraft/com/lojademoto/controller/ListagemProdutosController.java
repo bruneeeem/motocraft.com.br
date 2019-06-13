@@ -6,6 +6,7 @@
 package motocraft.com.lojademoto.controller;
 
 import java.util.List;
+import motocraft.com.lojademoto.entidade.Carrinho;
 import motocraft.com.lojademoto.entidade.Categoria;
 import motocraft.com.lojademoto.entidade.Produto;
 import motocraft.com.lojademoto.repository.CategoriaRepository;
@@ -40,7 +41,7 @@ public class ListagemProdutosController {
         // Busca normal
         produtos = prod.findAll(offset, qtd);
 
-        return new ModelAndView("product").addObject("produtos", produtos);
+        return new ModelAndView("product").addObject("produtos", produtos).addObject("carrinho",new Carrinho());
     }
     
     @ModelAttribute("categorias")
