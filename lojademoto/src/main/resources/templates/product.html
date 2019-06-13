@@ -437,9 +437,13 @@
 
                                                 <div class="block2-btn-addcart w-size1 trans-0-4">
                                                     <!-- Button -->
-                                                    <button type="submit" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                    <form th:action="@{/addCarrinho}" method="post">
+                                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                                        <input type="hidden" th:name="id" th:value="${prod.id}" >
+                                                        <button type="submit" class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
                                                         Add ao carrinho
-                                                    </button>
+                                                        </button>
+                                                    </form>
                                                 </div>
 
                                             </div>

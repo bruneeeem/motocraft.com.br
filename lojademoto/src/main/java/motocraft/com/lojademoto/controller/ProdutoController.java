@@ -6,10 +6,12 @@
 package motocraft.com.lojademoto.controller;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import motocraft.com.lojademoto.entidade.Carrinho;
 import motocraft.com.lojademoto.entidade.Categoria;
 import motocraft.com.lojademoto.entidade.Produto;
 
@@ -98,5 +100,6 @@ public class ProdutoController {
         return new ModelAndView("redirect:/produto/listar");
     }
 
+   
    
 }
